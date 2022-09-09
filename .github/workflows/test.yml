@@ -4,13 +4,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.13.4
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Golang module download
-      run: go mod download
-    - name: Test
-      run: bash ./scripts/circle-ci.sh
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Golang module download
+        run: go mod download
+      - name: Test
+        run: bash ./scripts/circle-ci.sh
